@@ -113,6 +113,11 @@ header{
   bottom: 0;
   right: 20%;
   z-index: 2;
+  /*      aumentar o tamnho  horizontal e vertical   
+          da equerda para direita e de cima para baixo
+  
+  */
+  transform: scale(1.5) translate(50px, -30px) ;
 }
 .bem-container{
   width:100%;
