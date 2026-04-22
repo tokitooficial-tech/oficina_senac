@@ -53,6 +53,9 @@
   --bem-border:#334155;
   --bem-light:#334155;
 }
+html{
+  scroll-behavior: smooth;
+}
 body{
   font-family:var(--bem-font-base);
   line-height:1.5;
@@ -122,6 +125,14 @@ header{
   
   */
   transform: scale(1.5) translate(50px, -30px) ;
+}
+.bem-titulo-h2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  font-size: 1.5rem;
+  color: var(--bem-secondary);
 }
 .bem-container{
   width:100%;
