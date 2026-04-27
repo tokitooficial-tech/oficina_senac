@@ -11,7 +11,7 @@
   --bem-light:#f3f4f6;
   --bem-bg:#1a1a1b;
   --bem-surface:#ffffff;
-  --bem-text:#1f2937;
+  --bem-text:#ffffff;
   --bem-text-muted:#6b7280;
   --bem-border:#e5e7eb;
   --bem-spacing-xs:.25rem;
@@ -96,6 +96,36 @@ header{
   width: 100%;
   margin: var(--bem-spacing-sm) 0;
   padding: var(--bem-spacing-sm);
+}
+#sobre{
+  position:relative;;
+}
+.sobre-img{
+  position: absolute;
+  top: 70%;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius:  100px 0 0 0;
+  background-color:  white;
+  width: 45%;
+  height: 230px;
+  z-index: 5;
+
+}
+.sobre-descrição{
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  border: yellow 2px solid;
+  height: 300px;
+  color: var(--bem-secondary);
+
+
 }
 .bem-hero{
   /*relativo para c ontrolar a posição absoluta dos filhos  */
