@@ -2,6 +2,7 @@ function initComparisons() {
   var x, i;
   /* Find all elements with an "overlay" class: */
   x = document.getElementsByClassName("img-comp-overlay");
+  console.log(X)
   for (i = 0; i < x.length; i++) {
     /* Once for each "overlay" element:
     pass the "overlay" element as a parameter when executing the compareImages function: */
@@ -16,6 +17,7 @@ function initComparisons() {
     img.style.width = (w / 2) + "px";
     /* Create slider: */
     slider = document.createElement("DIV");
+    // classilist, add ("ativo")
     slider.setAttribute("class", "img-comp-slider");
     /* Insert slider */
     img.parentElement.insertBefore(slider, img);

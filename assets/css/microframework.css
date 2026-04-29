@@ -1,6 +1,6 @@
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --bem-primary:#1a1a1b;
+  --bem-primary:#000000;
   --bem-secondary:#ffffff;
   --bem-tertiary: #f2994a; 
 
@@ -180,7 +180,7 @@ header{
   justify-content: center;
   margin: 20px;
   font-size: 1.5rem;
-  color: var(--bem-primary);
+  color: var(--bem-secondary);
 }
 .bem-container{
   width:100%;
@@ -519,9 +519,24 @@ header{
   z-index: 9;
   cursor: ew-resize;
   /*set the appearance of the slider:*/
-  width: 40px;
+  width: 80px;
   height: 40px;
-  background-color: #2196F3;
+  background-color: #0b68b452;
   opacity: 0.7;
-  border-radius: 50%;
+  border-radius: 100%;
+  clip-path: polygon(51% 34%, 100% 50%, 51% 73%, 0% 50%);
+}
+.img-comp-overlay::after{
+  content: "Antes";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  color: var(--bem-bg);
+  font-size: 1.4rem;
+}
+
+
+.img-comp-overlay{
+  border-left: solid 2px var(--bem-tertiary);
 }
