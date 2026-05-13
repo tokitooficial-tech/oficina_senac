@@ -24,6 +24,7 @@
 </head>
 <body class="bem-cursor">
     <div id="navbar-principal" class="bem-navbar"></div>
+    
     <main>
         <div id="navbar-secundaria" class="bem-navbar--secundaria bem-container"></div>
 
@@ -302,8 +303,20 @@
                 return;
             }
 
-            // Simulação de envio (substituir por fetch/Formspree se necessário)
-            emailjs.sendForm('service_xxxxxxx', 'template_xxxxxxx', this)
+            fetch('enviar_email.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'             
+                    }, 
+                    body: JSON.stringify({
+                        nome : document.getElementById("nome").value,
+                        telefone : document.getElementById("telefone").value,
+                        email : document.getElementById("email").value,
+                        horario : document.getElementById("horario").value,
+                        servico : document.getElementById("servico").value,
+                        mensagem : document.getElementById("mensagem").value 
+                    })  
+                })
                     .then(() => {
                         btnEnviar.disabled = true;
                         btnEnviar.textContent = 'Enviando...';
@@ -320,6 +333,24 @@
                     }, (error) => {
                         console.log('FAILED...', error);
                     });
+            // Simulação de envio (substituir por fetch/Formspree se necessário)
+            // emailjs.sendForm('service_xxxxxxx', 'template_xxxxxxx', this) /* envio no jvascript8 */
+            //         .then(() => {
+            //             btnEnviar.disabled = true;
+            //             btnEnviar.textContent = 'Enviando...';
+            //             setTimeout(function () {
+            //                 feedbackSucesso.classList.add('visivel');
+            //                 feedbackSucesso.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            //                 form.reset();
+            //                 form.querySelectorAll('.bem-form__input, .bem-form__textarea, .bem-form__select').forEach(function (c) {
+            //                     c.classList.remove('bem-form__input--success', 'bem-form__input--error');
+            //                 });
+            //                 btnEnviar.disabled = false;
+            //                 btnEnviar.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg> Enviar Mensagem';
+            //             }, 1200);
+            //         }, (error) => {
+            //             console.log('FAILED...', error);
+            //         });
 
 
             
